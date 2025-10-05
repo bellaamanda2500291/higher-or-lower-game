@@ -1,0 +1,59 @@
+# Higher or Lower Game Smart Contracts Implementation
+
+## Overview
+This PR implements the core functionality for a blockchain-based higher/lower guessing game on the Stacks blockchain.
+
+## Smart Contracts Implemented
+
+### game-logic-engine.clar
+**Purpose**: Core game logic for higher/lower prediction game
+**Features**:
+- Player prediction system (higher/lower)
+- Pseudo-random number generation using block data
+- Winner determination logic
+- Round management and tracking
+- Game state management (active/inactive)
+
+### prize-pool-manager.clar
+**Purpose**: Manages game prize pool and distributes winnings
+**Features**:
+- Entry fee collection (1 STX per round)
+- Prize pool accumulation and management
+- Winner payout distribution (50% of pool to winners)
+- Claim system for winnings
+- Balance tracking and security
+
+## Game Mechanics
+
+1. **Entry**: Players pay 1 STX entry fee per round
+2. **Prediction**: Players predict if the next number will be higher or lower
+3. **Generation**: Contract owner generates next random number (1-100)
+4. **Winners**: Players with correct predictions win share of prize pool
+5. **Payout**: Winners receive equal share of 50% of total prize pool
+
+## Technical Details
+
+### Code Quality
+- **Clarinet Check**: All contracts pass static analysis
+- **Test Suite**: Basic test coverage implemented
+- **Security**: Proper access controls and input validation
+- **Documentation**: Comprehensive inline documentation
+
+### Security Features
+- Owner-only functions for critical operations
+- Anti-manipulation safeguards
+- Secure STX transfer mechanisms
+- Duplicate prevention systems
+
+## Files Added
+- contracts/game-logic-engine.clar - Core game logic
+- contracts/prize-pool-manager.clar - Prize pool management
+- tests/game-logic-engine.test.ts - Game logic tests
+- tests/prize-pool-manager.test.ts - Prize pool tests
+
+## Validation
+- Contracts compile without errors
+- Clarinet check passes (with security warnings only)
+- Basic test suite passes
+- Documentation complete
+- Security considerations addressed
